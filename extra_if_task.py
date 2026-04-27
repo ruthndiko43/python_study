@@ -5,10 +5,12 @@
 #"Wrong password" if email is correct but password is wrong
 #"Email not found" otherwise
 email=input("Enter your email: ")
-password=input("Enter password")
-if email == "admin@gmail.com" and password =="Admin@123":
+password=input("Enter password: ")
+correct_email="admin@gmail.com"
+correct_password ="Admin@123"
+if email == correct_email and password ==correct_password:
     print("Access granted")
-elif email == "admin@gmail.com":
+elif email == correct_email and password!=correct_password:
     print("Wrong password")
 else:
     print("Email not found")
@@ -19,7 +21,7 @@ else:
 #"Other email provider" otherwise
 email = input("Enter email: ")
 
-if "@" not in email or "." not in email:
+if "@" not in email or "." not in email: #other way to do this (email.find("@")==-1 or email.find(".")==-1:)
     print("Invalid email")
 
 elif email.endswith("@gmail.com"):
@@ -37,7 +39,7 @@ password = input("Enter your password: ")
 if len(password) < 6:
     print("Weak")
 
-elif 6 <= len(password) <= 10 and any(char.isdigit() for char in password):
+elif 6 <= len(password) <= 10 and any(char.isdigit() for char in password):# and password.isalnum():
     print("Moderate")
 
 elif len(password) > 10 and any(char.isdigit() for char in password) and any(char.isupper() for char in password):
