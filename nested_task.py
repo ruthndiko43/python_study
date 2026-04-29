@@ -10,13 +10,13 @@
 # If not, print "Transaction approved."
 # Otherwise “Wrong account type”
 Amount=int(input("Enter your transaction Amount: "))
-Account=input("What your account type Standard /Premium: ")
-if Account=="Standard":
+Account=input("What your account type Standard /Premium: ").lower().strip()
+if Account=="standard":
     if Amount > 500:
         print("Transaction exceeds the limit for Standard accounts.")
     else:
         print("Transaction approved.")
-elif Account=="Premium":
+elif Account=="premium":
     if Amount >1000:
         print("Transaction exceeds the limit for Premium accounts.")
     else:
